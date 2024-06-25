@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;500;600;700&family=Open+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <title>Блюдо</title>
+</head>
+<body>
+    <table>
+    <% if (orders.length) { %>
+        <tr><th>Имя</th><th>Питомец</th><th>Ветеринар</th><th>Время записи</th><th>Статус</th></tr>
+        <% let typeNow = '', i = 0, j = 0;  %>
+        <% orders.forEach(({name, petname, vetname, login, time, status, id}) => { %>
+            <% if ((userRole != 'admin') && (userLogin == login)) { %>
+                <tr><td><%= name %></td><td><%= petname %></td><td><%= vetname %></td><td><%= time %></td><td><%= status %></td></tr>
+            <% } %>
+            <% if (userRole == 'admin') { %>
+                <tr>
+                    <td><%= name %></td>
+                    <td><%= petname %></td>
+                    <td><%= vetname %></td>
+                    <td><%= time %></td>
+                    <td>
+                        <form id="post-form" method="post" action="/orders/<%= id%>?_method=PUT">
+                            <input type="text" name="status" value="<%= status %>">
+                            <input type="submit" value="E">
+                        </form>
+                    </td>
+                    <td><inpit type="submit"></inpit></td>
+                </tr>
+            <% } %>
+        <%}) %>
+    <%} %>
+    </table>
+    <a href="/">На главную</a>
+</body>
+</html>

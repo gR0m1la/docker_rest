@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;500;600;700&family=Open+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <title>Ресторан</title>
+    <script>
+        const userLogin = '<%= userLogin %>';
+        const userRole = '<%= userRole %>';
+    </script>
+</head>
+<body>
+<div class="header">
+    <div class="container">
+            <div class="header-line" id="t1">
+
+                <div class="header-logo">
+                    <img src="/logo3.jpg" width="100" height="100" alt="" srcset="">
+                </div>
+
+                <div class="nav">
+                    <a class="nav-item" href="">ГЛАВНАЯ</a>
+                    <a class="nav-item" href="#t2">ПРЕЙСКУРАНТ</a>
+                    <a class="nav-item" href="#t3">О НАС</a>
+                    <% if (userLogin === null) { %>
+                        <a class="nav-item" href="login">ВОЙТИ</a>
+                        <a class="nav-item" href="registration">ЗАРЕГИСТРИРОВАТЬСЯ</a>
+                    <% } else { %>
+                        <a class="nav-item" href="/orders">ЗАПИСИ</a>
+                        <a id="open-modal-btn" class="reg-btn" href="#open-modal-btn">ЗАПИСАТЬСЯ</a>
+                        <a class="nav-item" href="/logout">ВЫЙТИ</a> 
+                    <% } %>
+                </div>
+
+                <div class="phone">
+                    <div class="phone-holder">
+
+                            <div class="phone-img">
+                                <img src="/phone2.png" alt="" srcset="">
+                            </div>
+
+                            <div class="number">
+                                <a class="num" href="#">+7 (778) 666-96-91</a>
+                            </div>
+
+                    </div>
+                </div>
+                
+                <div class="icon-menu">
+                    
+                    <button id="tuk">
+                        <img src="/icons-menu.png" src="icon-menu-img" width="50" height="50">
+                    </button>
+
+                    <div class="slide">
+                        <a class="nav-item block" href="">ГЛАВНАЯ</a>
+                        <a class="nav-item block" href="#t2">ПРЕЙСКУРАНТ</a>
+                        <a class="nav-item block" href="#t3">О НАС</a>
+                        <% if (userLogin === null) { %>
+                            <a class="nav-item block" href="login">ВОЙТИ</a>
+                            <a class="nav-item block" href="registration">ЗАРЕГИСТРИРОВАТЬСЯ</a>
+                        <% } else { %>
+                            <a class="nav-item block" href="/orders">ЗАПИСИ</a>
+                            <a id="open-modal-btn" class="reg-btn" href="#open-modal-btn">ЗАПИСАТЬСЯ</a>
+                            <a class="nav-item block" href="/logout">ВЫЙТИ</a> 
+                        <% } %>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="cards">
+        <div class="container">
+
+            <div class="card-holder">
+
+          
+                <div class="card">
+                    
+                    <div class="card-img">
+                        <img class="save-img" width="70" height="70" src="/Safe.png" alt="" srcset="">
+                    </div>
+
+                    <div class="card-title">
+                        Меры безопасности
+                    </div>
+
+                    <div class="card-desc">
+                        Ваш питомец будет здоров и обезопасен
+                    </div>
+
+                </div>
+
+        
+                <div class="card">
+                    
+                    <div class="card-img">
+                        <img class="save-img" width="70" height="70" src="/Card.png" alt="" srcset="">
+                    </div>
+
+                    <div class="card-title">
+                        Онлайн оплата
+                    </div>
+
+                    <div class="card-desc">
+                        Мы принимаем VISA, MasterCard.
+                    </div>
+
+                </div>
+
+        
+                <div class="card">
+                    
+                    <div class="card-img">
+                        <img class="save-img" width="70" height="70" src="/Meal.png" alt="" srcset="">
+                    </div>
+
+                    <div class="card-title">
+                        Лакомства для питомца
+                    </div>
+
+                    <div class="card-desc">
+                        Ваш питомец останется доволен посещением
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="history">
+        <div class="container">
+
+            <div class="history-holder">
+
+
+                <div class="history-info">   
+                    <div id="t3" class="history-title">
+                        О НАС
+                    </div>
+                        
+                    <div class="history-disc">
+                        <p>
+                            Добро пожаловать в нашу ветеринарную клинику, где забота о вашем четвероногом друге стоит на первом месте. 
+                            Мы гордимся предоставлением высококачественных медицинских услуг для животных, основанных на любви и профессионализме. </p> 
+                        <p>Наша команда состоит из опытных ветеринаров, которые обеспечивают полный спектр услуг, начиная от профилактики и заканчивая 
+                            лечением различных заболеваний. Мы стремимся создать дружественную и уютную атмосферу как для ваших питомцев, так и для вас.</p> 
+                        <p>В нашей клинике мы оснащены современным оборудованием, что позволяет нам точно диагностировать и эффективно лечить различные 
+                            заболевания. Мы понимаем, что ваш пушистик – уникальное существо, поэтому мы индивидуально подходим к каждому случаю, учитывая особенности и потребности вашего питомца.</p> 
+                        <p>Наша миссия – обеспечить вашего любимца заботой и вниманием, помогая ему проживать долгую, счастливую и здоровую жизнь. Приходите
+                             в нашу ветеринарную клинику, где вашему питомцу гарантировано лучшее медицинское обслуживание.  
+                    </div>
+                </div>
+
+                <div class="history-img">
+
+                    <img src="/сет десерт.jpg" width=80% height=80% alt="" srcset=""> 
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="container">
+        <a id="open-modal-btn" class="reg-btn" href="#open-modal-btn">Оформить заказ</a>
+    </div>
+
+    <div class="menu">
+        <div class="container">
+            <div class="menu-title" id="t2">
+                <h2>Прейскурант ветеринарной клиники</h2>
+
+                <h3>1. Прием врача:</h3>
+                <ul>
+                    <li>Общий осмотр - 1500 руб.</li>
+                    <li>Консультация специалиста - 2000 руб.</li>
+                </ul>
+            
+                <h3>2. Вакцинация:</h3>
+                <ul>
+                    <li>Однократная вакцинация от бешенства - 1200 руб.</li>
+                    <li>Комплексная вакцинация - 2500 руб.</li>
+                </ul>
+            
+                <h3>3. Диагностика:</h3>
+                <ul>
+                    <li>Клинический анализ крови - 1800 руб.</li>
+                    <li>Рентгенологическое исследование - от 2500 руб.</li>
+                    <li>Ультразвуковое исследование - от 3000 руб.</li>
+                </ul>
+            
+                <h3>4. Лечение:</h3>
+                    <ul>
+                        <li>Антибиотикотерапия - от 1000 руб.</li>
+                        <li>Противопаразитарное лечение - от 1200 руб.</li>
+                        <li>Хирургическое вмешательство (стерилизация, кастрация) - от 5000 руб.</li>
+                    </ul>
+
+                    <h3>5. Стационарное лечение:</h3>
+                    <ul>
+                        <li>Сутки стационара (включая лечение и уход) - 3500 руб.</li>
+                    </ul>
+
+                    <h3>6. Стрижка и груминг:</h3>
+                    <ul>
+                        <li>Стрижка шерсти - от 1500 руб.</li>
+                        <li>Гигиеническая чистка зубов - 1200 руб.</li>
+                    </ul>
+
+                    <h3>7. Дополнительные услуги:</h3>
+                    <ul>
+                        <li>Вызов врача на дом - 2000 руб. (в пределах города)</li>
+                        <li>Экстренная консультация в нерабочее время - 2500 руб.</li>
+                    </ul>
+            
+                <p>Обратите внимание, что цены могут варьироваться в зависимости от различных факторов. Для точного расчета
+                    стоимости услуг рекомендуем проконсультироваться с нашими ветеринарами.</p>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <div class="modal" id="my-modal">
+        <div class="modal_box">
+            <button class="modal-close-btn" id="close-my-modal-btn">X</button>
+            <h2>Оформление записи</h2>
+                <form id="post-form" class="orderForm" method="post" action="/">
+                    <input name="name" placeholder="Укажите ваше имя:" class="name" value="<%= userName %>" required />
+                    <input name="petname" placeholder="Укажите имя питомца:" class="petname" required />
+                    <input name="vetname" placeholder="Укажите имя ветеринара:" class="vetname" required />
+                    <input name="time" placeholder="Укажите время приема:" class="time" required />
+                    <input type="hidden" name="login" value="<%= userLogin %>" />
+                    <input type="hidden" name="status" value="Ожидание ответа" />
+                    <input type="submit" value="Оформить заказ" class="zakaz">
+                </form>
+        </div>
+    </div>
+
+    <script defer src="script.js"></script> 
+
+</body>
+</html>

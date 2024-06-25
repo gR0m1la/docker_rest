@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;500;600;700&family=Open+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <title>Блюдо</title>
+</head>
+<body>
+    <form id="post-form" method="post" action="/edit-item/<%= item.id%>?_method=PUT&number=<%= number %>">
+        <div class="form-info">
+            <label> type:
+                <input type="text" name="type" value="<%= item.type %>">
+            </label>
+            <br>
+            <label> imgSrc:
+                <input type="text" name="imgSrc" value="<%= item.imgSrc %>">
+            </label>
+            <br>
+            <label> title:
+                <input  type="text" name="title" value="<%= item.title %>">
+            </label>
+            <label> grammar:
+                <input type="text" name="grammar" value="<%= item.grammar %>">
+            </label>
+            <br>
+            <label> price:
+                <input type="Number" name="price" value="<%= item.price %>">
+            </label>
+            <label> desc:
+                <textarea  type="text" name="desc"><%= item.desc %></textarea>
+            </label>
+        </div>
+        <input type="submit" value="Изменить блюдо" />
+    </form>
+</body>
+</html>
