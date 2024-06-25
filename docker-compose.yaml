@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  web:
+    restart: on-failure
+    build:
+      context: .
+    command: sh -c "sleep 10 && npm start"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    networks:
+      - mynetwork
+
+  db:
+    container_name: db_auth
+    image: postgres:14.3-alpine
+    restart: always
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_HOSTNAME=db
+    ports:
+      - "5432:5432"
+    volumes:
+      - db:/var/lib/postgresql/data
+    networks:
+      - mynetwork
+
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: noemail@noemail.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5050:80"
+    depends_on:
+      - db
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
+
+volumes:
+  db:
+    driver: local
